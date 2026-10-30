@@ -131,64 +131,7 @@ export const AdminConsolePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Cloud Connectivity Matrix */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {/* MySQL */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold font-mono uppercase text-slate-500">Authoritative Core</span>
-            <Database className="w-4 h-4 text-blue-900" />
-          </div>
-          <div className="text-lg font-bold text-slate-900 font-display">MySQL 8 (ACID)</div>
-          <div className="text-xs text-emerald-600 font-mono mt-1 font-bold flex items-center space-x-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>CONNECTED & OPERATIONAL</span>
-          </div>
-          <p className="text-[11px] text-slate-500 mt-2">
-            Host: <code className="font-mono text-slate-700">localhost:3307</code> · Strict pessimistic row locks.
-          </p>
-        </div>
 
-        {/* Firebase */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold font-mono uppercase text-slate-500">Live Projections</span>
-            <Radio className="w-4 h-4 text-amber-500" />
-          </div>
-          <div className="text-lg font-bold text-slate-900 font-display">Firebase Realtime DB</div>
-          <div className={`text-xs font-mono mt-1 font-bold flex items-center space-x-1 ${
-            syncHealth?.firebase_status === 'CONNECTED' ? 'text-emerald-600' : 'text-amber-600'
-          }`}>
-            <span className={`w-2 h-2 rounded-full ${
-              syncHealth?.firebase_status === 'CONNECTED' ? 'bg-emerald-500' : 'bg-amber-500'
-            }`} />
-            <span>{syncHealth?.firebase_status || 'LOCAL_FALLBACK'}</span>
-          </div>
-          <p className="text-[11px] text-slate-500 mt-2">
-            Subscribed clients receive seat counters and delays without manual refresh.
-          </p>
-        </div>
-
-        {/* Azure Cosmos DB */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold font-mono uppercase text-slate-500">Distributed Records</span>
-            <Cloud className="w-4 h-4 text-cyan-600" />
-          </div>
-          <div className="text-lg font-bold text-slate-900 font-display">Azure Cosmos DB</div>
-          <div className={`text-xs font-mono mt-1 font-bold flex items-center space-x-1 ${
-            syncHealth?.cosmos_status === 'CONFIGURED' ? 'text-emerald-600' : 'text-cyan-600'
-          }`}>
-            <span className={`w-2 h-2 rounded-full ${
-              syncHealth?.cosmos_status === 'CONFIGURED' ? 'bg-emerald-500' : 'bg-cyan-500'
-            }`} />
-            <span>{syncHealth?.cosmos_status || 'LOCAL_TELEMETRY'}</span>
-          </div>
-          <p className="text-[11px] text-slate-500 mt-2">
-            Partitioned by <code className="font-mono text-slate-700">/region</code> for low-latency queries.
-          </p>
-        </div>
-      </div>
 
       {/* Booking Trends & Operational Analytics */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-md p-6 mb-8">
