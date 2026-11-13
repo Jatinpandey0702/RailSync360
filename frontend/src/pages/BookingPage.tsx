@@ -76,7 +76,7 @@ export const BookingPage: React.FC = () => {
               <CheckCircle2 className="w-8 h-8 text-white" />
               <div>
                 <h2 className="text-xl font-bold font-display">Booking Confirmed Successfully</h2>
-                <p className="text-xs text-emerald-100 font-mono">Durable ACID Transaction Committed to MySQL Core</p>
+                <p className="text-xs text-emerald-100 font-mono">Your ticket has been booked successfully</p>
               </div>
             </div>
             <div className="text-right">

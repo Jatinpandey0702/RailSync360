@@ -57,7 +57,7 @@ export const SearchPage: React.FC = () => {
         <div className="max-w-2xl">
           <div className="inline-flex items-center space-x-2 px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono mb-3">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-            <span>High-Throughput Authoritative Core</span>
+            <span>Fast & Reliable Reservation</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white mb-2">
             National Railway Express Reservation
