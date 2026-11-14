@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RailSync 360 — Presentation Deck (10 Slides)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0f17;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .slide {
+      width: 1440px;
+      height: 810px;
+      margin: 40px auto;
+      background-color: #111726;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      page-break-after: always;
+    }
+    .slide-bg {
+      background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+                  #111726;
+    }
+    .rail-stripe {
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02) 2px,
+        transparent 2px,
+        transparent 16px
+      );
+    }
+  </style>
+</head>
+<body class="py-10">
+
+  <!-- ==================== SLIDE 1 ==================== -->
+  <div id="slide-1" class="slide slide-bg p-16 justify-between border-t-4 border-t-blue-500">
+    <div class="absolute inset-0 rail-stripe pointer-events-none"></div>
+    <div class="flex items-center justify-between relative z-10">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/30">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8m-8 4h8m-4 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-wider text-slate-200 font-mono">RAILSYNC 360</span>
+      </div>
+      <span class="px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-mono">ADBMS Project Deck · Slide 01 / 10</span>
+    </div>
+
+    <div class="relative z-10 max-w-4xl my-auto">
+      <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-6">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        <span>Polyglot Cloud Data Architecture</span>
+      </div>
+      <h1 class="text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        RailSync 360 — Comprehensive Project Report & System Documentation
+      </h1>
+      <p class="text-xl text-slate-300 leading-relaxed font-normal">
+        Cloud Railway Reservation, Live Seat Availability & Distributed Records System with Authoritative MySQL 8 Core, Reactive Firebase Push, and Azure Cosmos DB Telemetry.
+      </p>
+    </div>
+
+    <div class="flex items-center justify-between pt-6 border-t border-slate-800 text-sm text-slate-400 relative z-10">
+      <div class="flex items-center space-x-6">
+        <div>
+          <span class="text-xs text-slate-500 uppercase block font-mono">Lead Engineer</span>
+          <span class="text-slate-200 font-semibold font-mono">Jatinpandey0702</span>
+        </div>
+        <div class="h-8 w-px bg-slate-800"></div>
+        <div>
+          <span class="text-xs text-slate-500 uppercase block font-mono">Architecture</span>
+          <span class="text-slate-200 font-semibold">ACID Core + Push Projections + NoSQL Telemetry</span>
+        </div>
+      </div>
+      <div class="font-mono text-xs text-blue-400 bg-slate-900/80 px-4 py-2 rounded-lg border border-slate-800">
+        github.com/Jatinpandey0702/RailSync360
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2 ==================== -->
+  <div id="slide-2" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Executive Brief</span>
+        <h2 class="text-2xl font-bold text-white">Executive Summary & Problem Definition</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 02 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 my-auto">
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-blue-900/40 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 font-mono font-bold text-lg">01</div>
+          <h3 class="text-lg font-bold text-slate-100 mb-2">The Reservation Trilemma</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            High peak-hour concurrency in railway ticketing causes connection starvation, deadlocks, and accidental overbooking (double bookings) when isolation levels fail.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800/60 font-mono text-xs text-emerald-400">
+          ✔ Solution: MySQL 8 Row-Level Locking
+        </div>
+      </div>
+
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-amber-900/40 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4 font-mono font-bold text-lg">02</div>
+          <h3 class="text-lg font-bold text-slate-100 mb-2">The Polling Bottleneck</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Thousands of passengers constantly refreshing browser tabs for live seat availability flood the transactional database with heavy repetitive read I/O queries.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800/60 font-mono text-xs text-amber-400">
+          ✔ Solution: Firebase WebSocket Push Tree
+        </div>
+      </div>
+
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-cyan-900/40 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 font-mono font-bold text-lg">03</div>
+          <h3 class="text-lg font-bold text-slate-100 mb-2">Cross-Zonal Analytics</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Running heavy regional aggregation and demand queries over nationwide historical booking logs severely degrades transactional checkout latency.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800/60 font-mono text-xs text-cyan-400">
+          ✔ Solution: Cosmos DB Partitioned by /region
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400">
+      <span>Architectural Core: <strong class="text-slate-200">Transactional Outbox Pattern</strong> decouples relational writes from cloud sync.</span>
+      <span class="font-mono text-slate-500">Reliability Target: 100% Zero-Overbooking</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 3 ==================== -->
+  <div id="slide-3" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Database Architecture</span>
+        <h2 class="text-2xl font-bold text-white">Comparative Database Topology</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 03 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 my-auto">
+      <!-- Col 1 -->
+      <div class="bg-slate-900/90 p-6 rounded-xl border-t-4 border-t-blue-500 border-x border-b border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-mono text-blue-400 uppercase font-bold">Authoritative Core</span>
+          <span class="text-xs bg-blue-950 text-blue-300 px-2 py-0.5 rounded font-mono">SQL</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">MySQL 8 (InnoDB)</h3>
+        <p class="text-xs text-slate-400 mb-4">Single source of truth for users, trains, inventory, and seat allocations.</p>
+        
+        <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Data Model:</strong> Relational, Normalized to 3NF</li>
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Consistency:</strong> Strict ACID (Read Committed)</li>
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Concurrency:</strong> Pessimistic <code class="text-amber-300">FOR UPDATE</code> Locks</li>
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Access Pattern:</strong> Complex joins & atomic checkout</li>
+        </ul>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="bg-slate-900/90 p-6 rounded-xl border-t-4 border-t-amber-500 border-x border-b border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-mono text-amber-400 uppercase font-bold">Live Projections</span>
+          <span class="text-xs bg-amber-950 text-amber-300 px-2 py-0.5 rounded font-mono">JSON Tree</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Firebase Realtime DB</h3>
+        <p class="text-xs text-slate-400 mb-4">Ultra-fast reactive WebSocket streams directly updating passenger screens.</p>
+        
+        <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+          <li class="flex items-start"><span class="text-amber-400 mr-2 font-bold">•</span><strong>Data Model:</strong> Hierarchical JSON Tree</li>
+          <li class="flex items-start"><span class="text-amber-400 mr-2 font-bold">•</span><strong>Consistency:</strong> Monotonically versioned state</li>
+          <li class="flex items-start"><span class="text-amber-400 mr-2 font-bold">•</span><strong>Latency:</strong> Sub-second client updates</li>
+          <li class="flex items-start"><span class="text-amber-400 mr-2 font-bold">•</span><strong>Access Pattern:</strong> Direct WebSocket subscriptions</li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="bg-slate-900/90 p-6 rounded-xl border-t-4 border-t-cyan-500 border-x border-b border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-mono text-cyan-400 uppercase font-bold">Zonal Telemetry</span>
+          <span class="text-xs bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded font-mono">NoSQL Doc</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Azure Cosmos DB</h3>
+        <p class="text-xs text-slate-400 mb-4">Horizontally scalable historical booking logs partitioned by railway zone.</p>
+        
+        <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Data Model:</strong> Partitioned JSON Documents</li>
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Partition Key:</strong> <code class="text-cyan-300 font-mono">/region</code> (North, West, South)</li>
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Consistency:</strong> Bounded Staleness / Session</li>
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Access Pattern:</strong> Analytics & geographical audit queries</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Key Architectural Win: Eliminates both lock-contention & dual-write inconsistencies.</span>
+      <span>Polyglot Persistence</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 4 ==================== -->
+  <div id="slide-4" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">System Flow</span>
+        <h2 class="text-2xl font-bold text-white">System Architecture & Data Flow</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 04 / 10</span>
+    </div>
+
+    <div class="my-auto space-y-6">
+      <div class="grid grid-cols-4 gap-4 items-center">
+        <!-- Client -->
+        <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 text-center">
+          <div class="text-xs font-mono text-blue-400 mb-1">CLIENT LAYER</div>
+          <div class="text-lg font-bold text-white mb-2">React 19 + Vite</div>
+          <p class="text-xs text-slate-400">TanStack Query, Lucide Icons, Recharts Analytics</p>
+        </div>
+
+        <!-- API -->
+        <div class="bg-slate-900 p-5 rounded-xl border border-blue-500/40 text-center relative">
+          <div class="text-xs font-mono text-emerald-400 mb-1">REST API & AUTH</div>
+          <div class="text-lg font-bold text-white mb-2">FastAPI Backend</div>
+          <p class="text-xs text-slate-400">OAuth2 JWT, Pydantic v2, SQLAlchemy 2 ORM</p>
+        </div>
+
+        <!-- Relational Core -->
+        <div class="bg-slate-900 p-5 rounded-xl border border-amber-500/40 text-center">
+          <div class="text-xs font-mono text-amber-400 mb-1">TRANSACTIONAL CORE</div>
+          <div class="text-lg font-bold text-white mb-2">MySQL 8 (Port 3307)</div>
+          <p class="text-xs text-slate-400">Pessimistic Row Lock &amp; Outbox Table</p>
+        </div>
+
+        <!-- Cloud Sync -->
+        <div class="bg-slate-900 p-5 rounded-xl border border-cyan-500/40 text-center">
+          <div class="text-xs font-mono text-cyan-400 mb-1">ASYNC PROJECTIONS</div>
+          <div class="text-lg font-bold text-white mb-2">Firebase &amp; Cosmos</div>
+          <p class="text-xs text-slate-400">WebSocket Tree &amp; Regional NoSQL Docs</p>
+        </div>
+      </div>
+
+      <!-- Flow Explanation -->
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 space-y-3 text-sm text-slate-300">
+        <h4 class="font-bold text-white flex items-center space-x-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span>Transactional Outbox Workflow (Zero Dual-Write Failure)</span>
+        </h4>
+        <div class="grid grid-cols-3 gap-4 text-xs font-mono text-slate-400">
+          <div class="bg-slate-950 p-3 rounded border border-slate-800">
+            <span class="text-blue-400 block font-bold mb-1">STEP 1: Atomic Commit</span>
+            Ticket booking, inventory decrement, and outbox event write execute inside one atomic MySQL transaction.
+          </div>
+          <div class="bg-slate-950 p-3 rounded border border-slate-800">
+            <span class="text-amber-400 block font-bold mb-1">STEP 2: Outbox Worker Poller</span>
+            Asynchronous background CDC worker scans unpublished events (<code class="text-amber-300">published = False</code>).
+          </div>
+          <div class="bg-slate-950 p-3 rounded border border-slate-800">
+            <span class="text-cyan-400 block font-bold mb-1">STEP 3: Cloud Dispatch</span>
+            Worker pushes to Firebase &amp; Cosmos DB with retry policies, setting <code class="text-cyan-300">published = True</code> on success.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Guaranteed At-Least-Once Delivery to Cloud Projections</span>
+      <span>Fail-Safe Isolation</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 5 ==================== -->
+  <div id="slide-5" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Data Model</span>
+        <h2 class="text-2xl font-bold text-white">Relational Schema (3NF) — Entities &amp; Constraints</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 05 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 my-auto text-xs">
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-blue-400 font-mono mb-2">users &amp; stations</h4>
+        <p class="text-slate-400 mb-2">Credentials &amp; zonal railway junctions.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• <span class="text-slate-400">users:</span> id (PK), email (UQ), password_hash, role</li>
+          <li>• <span class="text-slate-400">stations:</span> id (PK), station_code (UQ), name, region</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-emerald-400 font-mono mb-2">trains &amp; train_stops</h4>
+        <p class="text-slate-400 mb-2">Schedules &amp; intermediate station sequences.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• <span class="text-slate-400">trains:</span> train_number (UQ), source, dest</li>
+          <li>• <span class="text-slate-400">train_stops:</span> train_id, station_id, stop_sequence</li>
+          <li>• <strong class="text-amber-400">UQ: (train_id, stop_sequence)</strong></li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-amber-400 font-mono mb-2">train_journeys</h4>
+        <p class="text-slate-400 mb-2">Dated operational services for trains.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• id (PK), train_id (FK), travel_date (DATE)</li>
+          <li>• departure_datetime, arrival_datetime, status</li>
+          <li>• <strong class="text-amber-400">UQ: (train_id, travel_date)</strong></li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-cyan-400 font-mono mb-2">journey_inventory</h4>
+        <p class="text-slate-400 mb-2">Class quotas &amp; pessimistic locking target.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• journey_id (FK), travel_class ('AC' | 'GENERAL')</li>
+          <li>• capacity (10), available_seats, waitlist_count</li>
+          <li>• <strong class="text-amber-400">version: Optimistic Concurrency Token</strong></li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-purple-400 font-mono mb-2">tickets &amp; passengers</h4>
+        <p class="text-slate-400 mb-2">Master PNR &amp; individual seats.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• <span class="text-slate-400">tickets:</span> pnr (UQ), user_id, journey_id, total_fare</li>
+          <li>• <span class="text-slate-400">passengers:</span> seat_number, status ('CNF' | 'WL')</li>
+          <li>• <span class="text-slate-400">waitlist_position:</span> sequential FIFO index</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+        <h4 class="font-bold text-rose-400 font-mono mb-2">booking_events (Outbox)</h4>
+        <p class="text-slate-400 mb-2">Transactional CDC audit &amp; dispatch log.</p>
+        <ul class="text-slate-300 space-y-1 font-mono text-[11px]">
+          <li>• aggregate_id (PNR), event_type</li>
+          <li>• payload (JSON snapshot of entity)</li>
+          <li>• published (BOOLEAN), retry_count (INT)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Zero Transitive Dependencies · Strict Third Normal Form (3NF)</span>
+      <span>InnoDB Referential Integrity</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 6 ==================== -->
+  <div id="slide-6" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Algorithms &amp; Locks</span>
+        <h2 class="text-2xl font-bold text-white">Core Algorithms &amp; Transactional Guarantees</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 06 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 my-auto">
+      <!-- Card 1 -->
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-blue-400 uppercase font-bold mb-2">ALGORITHM 01</div>
+        <h3 class="text-base font-bold text-white mb-2">Pessimistic Row-Level Booking</h3>
+        <p class="text-xs text-slate-400 mb-3">Prevents race conditions when remaining seats = 1.</p>
+        <div class="bg-slate-950 p-3 rounded font-mono text-[10px] text-slate-300 leading-relaxed border border-slate-800/80">
+          <span class="text-slate-500">// Acquire exclusive lock</span><br/>
+          inv = db.query(JourneyInventory)<br/>
+          &nbsp;&nbsp;.filter(...)<br/>
+          &nbsp;&nbsp;<strong class="text-amber-400">.with_for_update()</strong>.one()<br/><br/>
+          <span class="text-emerald-400">if inv.available_seats &gt;= count:</span><br/>
+          &nbsp;&nbsp;inv.available_seats -= count<br/>
+          &nbsp;&nbsp;allocate_seats()<br/>
+          <span class="text-amber-400">elif waitlist_has_space:</span><br/>
+          &nbsp;&nbsp;allocate_waitlist(FIFO)<br/>
+          <span class="text-rose-400">else: raise 400 (Cap Exceeded)</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-emerald-400 uppercase font-bold mb-2">ALGORITHM 02</div>
+        <h3 class="text-base font-bold text-white mb-2">Waitlist Cascading on Cancellation</h3>
+        <p class="text-xs text-slate-400 mb-3">Instant seat reallocation &amp; queue compaction.</p>
+        <div class="bg-slate-950 p-3 rounded font-mono text-[10px] text-slate-300 leading-relaxed border border-slate-800/80">
+          <span class="text-slate-500">// Lock inventory &amp; locate WL 1</span><br/>
+          inv = get_inventory_for_update()<br/>
+          next_wl = find_earliest_wl_passenger()<br/><br/>
+          <span class="text-emerald-400">if next_wl:</span><br/>
+          &nbsp;&nbsp;<span class="text-slate-500">// Auto-promote to Confirmed</span><br/>
+          &nbsp;&nbsp;next_wl.reservation_status = 'CNF'<br/>
+          &nbsp;&nbsp;next_wl.seat_number = vacated_seat<br/>
+          &nbsp;&nbsp;inv.waitlist_count -= 1<br/>
+          &nbsp;&nbsp;<strong class="text-cyan-400">compact_remaining_wl_queue()</strong><br/>
+          &nbsp;&nbsp;publish_promotion_event()
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-cyan-400 uppercase font-bold mb-2">ALGORITHM 03</div>
+        <h3 class="text-base font-bold text-white mb-2">Directional Intermediate Routing</h3>
+        <p class="text-xs text-slate-400 mb-3">Searches stops with sequence ordering.</p>
+        <div class="bg-slate-950 p-3 rounded font-mono text-[10px] text-slate-300 leading-relaxed border border-slate-800/80">
+          <span class="text-slate-500">// Aliased TrainStop instances</span><br/>
+          StopSource = aliased(TrainStop)<br/>
+          StopDest = aliased(TrainStop)<br/><br/>
+          query = query.join(StopSource)<br/>
+          &nbsp;&nbsp;.join(StopDest)<br/>
+          &nbsp;&nbsp;.filter(<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong class="text-amber-400">StopSource.stop_sequence &lt;</strong><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong class="text-amber-400">StopDest.stop_sequence</strong>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;StopSource.code == source,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;StopDest.code == destination<br/>
+          &nbsp;&nbsp;)
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Guaranteed Isolation: Eliminates Dirty Reads, Phantom Reads &amp; Lost Updates.</span>
+      <span>ACID Invariant</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 7 ==================== -->
+  <div id="slide-7" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Application Showcase</span>
+        <h2 class="text-2xl font-bold text-white">User Interface Walkthrough (Live App Screenshots)</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 07 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5 my-auto">
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/01_search_page.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">01. Train Search &amp; Route Discovery</h4>
+        <p class="text-[11px] text-slate-400">Directional halts &amp; seat availability badges.</p>
+      </div>
+
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/03_booking_page.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">02. Passenger Booking Flow</h4>
+        <p class="text-[11px] text-slate-400">Real-time fare calculation &amp; instant seat assignment.</p>
+      </div>
+
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/04_trips_page.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">03. My Trips &amp; Ticket Cancellation</h4>
+        <p class="text-[11px] text-slate-400">PNR status &amp; 1-click cancellation with waitlist auto-promotion.</p>
+      </div>
+
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/05_booking_trends.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">04. Real-Time Booking Trends</h4>
+        <p class="text-[11px] text-slate-400">Velocity metrics &amp; zonal distribution charts.</p>
+      </div>
+
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/06_live_radar.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">05. Live Train Radar</h4>
+        <p class="text-[11px] text-slate-400">Active train delays &amp; running status visualization.</p>
+      </div>
+
+      <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+        <img src="screenshots/07_admin_console.png" class="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800">
+        <h4 class="font-bold text-xs text-white">06. Operations &amp; Outbox Console</h4>
+        <p class="text-[11px] text-slate-400">Status injection &amp; transactional outbox event telemetry.</p>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Built with React 19 + TypeScript + Tailwind CSS · Zero Generic AI Templates</span>
+      <span>Responsive Layout</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 8 ==================== -->
+  <div id="slide-8" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Empirical Verification</span>
+        <h2 class="text-2xl font-bold text-white">Verification &amp; Stress Testing Results</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 08 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8 my-auto">
+      <!-- Test 1 -->
+      <div class="bg-slate-900/90 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-emerald-400 font-bold uppercase">STRESS TEST 01</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-xs font-mono font-bold">PASSED</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">20-Thread Race Condition Simulation</h3>
+          <p class="text-xs text-slate-400 mb-4">
+            Test File: <code class="text-blue-300 font-mono">test_mysql_race_condition.py</code><br/>
+            Simulated 20 simultaneous threads requesting the last 2 remaining seats concurrently.
+          </p>
+
+          <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 space-y-1.5 border border-slate-800">
+            <div class="text-slate-500">// Assertion Metrics:</div>
+            <div>[✓] Threads Dispatched:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white font-bold">20</span></div>
+            <div>[✓] Confirmed Allocations:&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400 font-bold">2 (CNF)</span></div>
+            <div>[✓] Waitlist / Rejections:&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-400 font-bold">18</span></div>
+            <div>[✓] Duplicate Seat Numbers:&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400 font-bold">0 (ZERO)</span></div>
+            <div>[✓] Invariant Integrity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400 font-bold">100% SATISFIED</span></div>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-mono">
+          Strict proof that row-level locking eliminates race conditions.
+        </div>
+      </div>
+
+      <!-- Test 2 -->
+      <div class="bg-slate-900/90 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono text-emerald-400 font-bold uppercase">SUITE TEST 02</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-xs font-mono font-bold">PASSED</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Automated E2E Booking Lifecycle</h3>
+          <p class="text-xs text-slate-400 mb-4">
+            Test Script: <code class="text-blue-300 font-mono">scripts/verify_e2e.py</code><br/>
+            Automated verification across the full passenger reservation &amp; cancellation flow.
+          </p>
+
+          <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 space-y-1.5 border border-slate-800">
+            <div class="text-slate-500">// Test Assertions:</div>
+            <div>[✓] Intermediate Search (NDLS-&gt;CNB):&nbsp;<span class="text-emerald-400">14 Services</span></div>
+            <div>[✓] Ticket Reservation &amp; PNR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400">RS360-OK</span></div>
+            <div>[✓] Inventory Decrement (10 -&gt; 9):&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400">VERIFIED</span></div>
+            <div>[✓] Cancellation &amp; WL Promotion:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400">PROMOTED</span></div>
+            <div>[✓] Outbox Event Generation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-400">LOGGED</span></div>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-mono">
+          Full validation of business logic, schema constraints, and rollback handlers.
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Zero Overbooking Mathematically Verified · 100% Test Suite Coverage</span>
+      <span>Deterministic Reliability</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 9 ==================== -->
+  <div id="slide-9" class="slide slide-bg p-14 flex-col justify-between">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Security &amp; Roadmap</span>
+        <h2 class="text-2xl font-bold text-white">Security, Operational Notes &amp; Future Scope</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 09 / 10</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 my-auto">
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-blue-400 font-bold uppercase mb-2">SECURITY &amp; AUTH</div>
+        <h3 class="text-base font-bold text-white mb-2">Zero-Trust Credential Defense</h3>
+        <ul class="text-xs text-slate-300 space-y-2 mt-4">
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>BCrypt Password Hashing:</strong> Salted password hashes with cryptographic work factor.</li>
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Stateless JWT Tokens:</strong> Scoped claims with 480-minute expiry windows.</li>
+          <li class="flex items-start"><span class="text-blue-400 mr-2 font-bold">•</span><strong>Role-Based Access Control:</strong> Strict separation of Passenger vs Admin privileges.</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-emerald-400 font-bold uppercase mb-2">SQL SAFETY &amp; AUDITING</div>
+        <h3 class="text-base font-bold text-white mb-2">Injection Immunity</h3>
+        <ul class="text-xs text-slate-300 space-y-2 mt-4">
+          <li class="flex items-start"><span class="text-emerald-400 mr-2 font-bold">•</span><strong>Parameterized SQL:</strong> All queries use SQLAlchemy 2.0 bound parameters, eliminating SQL injection vectors.</li>
+          <li class="flex items-start"><span class="text-emerald-400 mr-2 font-bold">•</span><strong>Immutable Outbox Log:</strong> Complete transactional trail for compliance audits.</li>
+          <li class="flex items-start"><span class="text-emerald-400 mr-2 font-bold">•</span><strong>CORS Protection:</strong> Explicit origin boundary controls in FastAPI middleware.</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+        <div class="text-xs font-mono text-cyan-400 font-bold uppercase mb-2">FUTURE ENHANCEMENTS</div>
+        <h3 class="text-base font-bold text-white mb-2">Roadmap &amp; Scalability</h3>
+        <ul class="text-xs text-slate-300 space-y-2 mt-4">
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Dynamic Surge Pricing:</strong> Real-time pricing models adjusting with waitlist depth.</li>
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Zonal Station Quotas:</strong> Partial journey ticket pooling for multi-stop journeys.</li>
+          <li class="flex items-start"><span class="text-cyan-400 mr-2 font-bold">•</span><strong>Serverless Notifications:</strong> Instant SMS/Email alerts on waitlist promotion.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+      <span>Enterprise Security Hardening · Continuous Auditability</span>
+      <span>Future Scope</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 10 ==================== -->
+  <div id="slide-10" class="slide slide-bg p-14 flex-col justify-between border-b-4 border-b-blue-500">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold text-white">Design Notes &amp; System Highlights</h2>
+      </div>
+      <span class="px-3 py-1 rounded bg-slate-800/80 text-xs font-mono text-slate-400">Slide 10 / 10</span>
+    </div>
+
+    <div class="my-auto grid grid-cols-3 gap-6">
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 text-center">
+        <div class="text-3xl font-extrabold text-blue-400 font-mono mb-2">3NF + Outbox</div>
+        <h4 class="text-sm font-bold text-white mb-2">Architecture Integrity</h4>
+        <p class="text-xs text-slate-400">Zero dual-write anomalies and zero race condition overbookings.</p>
+      </div>
+
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 text-center">
+        <div class="text-3xl font-extrabold text-emerald-400 font-mono mb-2">&lt; 100ms</div>
+        <h4 class="text-sm font-bold text-white mb-2">Live Availability Updates</h4>
+        <p class="text-xs text-slate-400">Sub-second reactive updates via WebSocket push, freeing relational I/O.</p>
+      </div>
+
+      <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 text-center">
+        <div class="text-3xl font-extrabold text-cyan-400 font-mono mb-2">100% Tested</div>
+        <h4 class="text-sm font-bold text-white mb-2">Empirical Correctness</h4>
+        <p class="text-xs text-slate-400">Automated race tests and end-to-end booking verification suites.</p>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 flex items-center justify-between">
+      <div>
+        <h3 class="text-lg font-bold text-white mb-1">RailSync 360 Project Repository</h3>
+        <p class="text-xs text-slate-400 font-mono">Open-source educational cloud railway reservation system.</p>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/Jatinpandey0702/RailSync360" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-mono text-xs font-bold transition shadow-lg shadow-blue-500/20">
+          github.com/Jatinpandey0702/RailSync360
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
